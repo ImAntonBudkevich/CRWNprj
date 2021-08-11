@@ -8,7 +8,7 @@ import ShopPage from './pages/shop/shop';
 import Header from './components/header/header';
 import { auth, createUserProfileDoc } from './firebase/firebase.utils';
 import { SignInOut } from './pages/sign-in-out/sign-in-out';
-import { setCurrentUser } from './redux/user/user.actions';
+import { setCurrentUser as setCurrentUserAC } from './redux/user/user.actions';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -61,7 +61,7 @@ const mapStateToProps = ({ user }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  setCurrentUser: (user) => dispatch(setCurrentUserAC(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

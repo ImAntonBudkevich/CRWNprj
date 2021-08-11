@@ -1,5 +1,5 @@
 import React from 'react';
-import { PreviewItems } from '../preview-items/preview-items';
+import PreviewItems from '../preview-items/preview-items';
 
 import './preview.scss';
 
@@ -10,8 +10,8 @@ export const Preview = ({ title, items }) => {
       <div className='preview'>
         {items
           .filter((item, ind) => ind < 4)
-          .map(({ id, ...item }) => {
-            return <PreviewItems key={item.id} {...item} />;
+          .map((item) => {
+            return <PreviewItems key={item.id} item={item} />;
           })}
       </div>
     </div>
